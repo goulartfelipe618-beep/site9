@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 220 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 30% 95%;
+    --secondary-foreground: 220 30% 20%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 10 80% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 15% 92%;
+    --input: 210 15% 92%;
+    --ring: 220 70% 45%;
+
+    --radius: 1.25rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 30% 15%;
+    --sidebar-primary: 220 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 95%;
+    --sidebar-accent-foreground: 220 30% 20%;
+    --sidebar-border: 210 15% 92%;
+    --sidebar-ring: 220 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+  }
+}
+
+/* Glow card */
+.glow-card {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(210, 15%, 92%);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 30px hsl(220, 70%, 45%, 0.08), 0 1px 3px hsl(0, 0%, 0%, 0.04);
+  transition: box-shadow 0.4s, transform 0.4s;
+}
+
+.glow-card:hover {
+  box-shadow: 0 8px 40px hsl(220, 70%, 45%, 0.14), 0 2px 6px hsl(0, 0%, 0%, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Coral glow card */
+.glow-card-coral {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(210, 15%, 92%);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 30px hsl(10, 80%, 62%, 0.1), 0 1px 3px hsl(0, 0%, 0%, 0.04);
+  transition: box-shadow 0.4s, transform 0.4s;
+}
+
+.glow-card-coral:hover {
+  box-shadow: 0 8px 40px hsl(10, 80%, 62%, 0.18), 0 2px 6px hsl(0, 0%, 0%, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Summer input */
+.summer-input {
+  background: hsl(210, 20%, 97%);
+  border: 1px solid hsl(210, 15%, 90%);
+  border-radius: 0.875rem;
+  padding: 14px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.875rem;
+  width: 100%;
+  transition: all 0.3s;
+  color: hsl(220, 30%, 15%);
+}
+
+.summer-input::placeholder {
+  color: hsl(220, 10%, 60%);
+  font-weight: 300;
+}
+
+.summer-input:focus {
+  outline: none;
+  border-color: hsl(220, 70%, 45%);
+  box-shadow: 0 0 0 4px hsl(220, 70%, 45%, 0.1);
+}
+
+/* Primary button */
+.summer-btn {
+  background: hsl(220, 70%, 45%);
+  color: hsl(0, 0%, 100%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.3s;
+}
+
+.summer-btn:hover {
+  background: hsl(220, 70%, 38%);
+  box-shadow: 0 8px 28px hsl(220, 70%, 45%, 0.3);
+}
+
+/* Coral button */
+.summer-btn-coral {
+  background: hsl(10, 80%, 62%);
+  color: hsl(0, 0%, 100%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.3s;
+}
+
+.summer-btn-coral:hover {
+  background: hsl(10, 80%, 55%);
+  box-shadow: 0 8px 28px hsl(10, 80%, 62%, 0.3);
+}
+
+.summer-btn-outline {
+  background: transparent;
+  color: hsl(220, 70%, 45%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 14px 36px;
+  border: 2px solid hsl(220, 70%, 45%);
+  border-radius: 100px;
+  transition: all 0.3s;
+}
+
+.summer-btn-outline:hover {
+  background: hsl(220, 70%, 45%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* Progress bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, hsl(220, 70%, 45%), hsl(10, 80%, 62%));
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(220, 70%, 45%, 0.2); border-radius: 3px; }
